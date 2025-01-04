@@ -1,106 +1,77 @@
+import PlayerCard from "@/components/cards/PlayerCard";
+import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <div className="flex items-center w-full justify-between">
-          <Image
-            className="dark:invert"
-            src="https://nextjs.org/icons/next.svg"
-            alt="Next.js logo"
-            width={180}
-            height={38}
-            priority
-          />
-          <ModeToggle />
+    <main className="flex flex-col justify-center gap-16 py-4">
+      <div className="w-full h-screen flex flex-col items-center justify-center gap-4">
+        <div className="flex flex-col items-center justify-center">
+          <div className="font-bold text-8xl text-foreground text-center">
+            HNL
+          </div>
+          <div className="font-semibold text-4xl text-secondary-foreground/50 text-center">
+            Hockey Nations League
+          </div>
         </div>
+        <Button>Check More</Button>
+        <ModeToggle />
+      </div>
 
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="flex flex-col items-center justify-center gap-12 px-8">
+        <div className="font-bold text-6xl">Best Players</div>
+        <div className="grid place-items-center grid-cols-3 gap-4 px-8">
+          {Array(3)
+            .fill("")
+            .map((_, i) => (
+              <PlayerCard
+                key={i}
+                name="Player Name"
+                src="/images/player.png"
+                nth={i + 1}
+                goals={Math.floor(Math.random() * 100)}
+                assists={Math.floor(Math.random() * 100)}
+                points={Math.floor(Math.random() * 100)}
+              />
+            ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      <div className="flex justify-center items-center gap-8 w-full px-8">
+        <div className="w-1/2 p-16 flex flex-col items-center justify-center gap-8">
+          <div className="font-semibold text-6xl ">
+            Check out upcoming games
+          </div>
+          <div className="text-xl text-foreground/50 leading-relaxed">
+            Hockey season is in full swing! Don’t miss thrilling matchups,
+            intense rivalries, and rising stars lighting up the ice. Grab your
+            jersey and cheer your team to victory, game time is here!
+          </div>
+        </div>
+        <div className="w-1/2 p-16">
+          <div className="aspect-video w-full bg-slate-500 rounded-xl overflow-hidden">
+            {/* todo image */}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex justify-center items-center gap-8 w-full px-8">
+        <div className="w-1/2 p-16">
+          <div className="aspect-video w-full bg-slate-500 rounded-xl overflow-hidden">
+            {/* todo image */}
+          </div>
+        </div>
+        <div className="w-1/2 p-16 flex flex-col items-center justify-center gap-8">
+          <div className="font-semibold text-6xl ">
+            Check out upcoming games
+          </div>
+          <div className="text-xl text-foreground/50 leading-relaxed">
+            Hockey season is in full swing! Don’t miss thrilling matchups,
+            intense rivalries, and rising stars lighting up the ice. Grab your
+            jersey and cheer your team to victory, game time is here!
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }
