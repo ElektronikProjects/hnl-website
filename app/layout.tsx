@@ -4,6 +4,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import { Nunito_Sans } from 'next/font/google';
+import Footer from '@/components/Footer';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -47,7 +48,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <div className="relative flex min-h-[calc(100vh-0px)] w-full flex-col justify-start bg-background">
+            {children}
+          </div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
