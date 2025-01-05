@@ -1,40 +1,44 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function PlayerCard({
   name,
   src,
-  nth,
   goals,
   assists,
   points,
 }: {
   name: string;
   src: string;
-  nth: number;
   goals: number;
   assists: number;
   points: number;
 }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 border border-border rounded-xl p-4 w-full">
-      <div className="flex justify-between items-center gap-4 w-full">
-        <div className="size-20 rounded-full overflow-hidden relative">
-          <Image src={src} alt={name} fill />
-        </div>
-        <div className="flex flex-col pr-2">
-          <div className="text-primary text-left font-semibold text-sm">
-            #TOP {nth}
+    <div className="h-[32rem] w-full bg-slate-900 rounded-2xl relative flex flex-col justify-end items-center p-2">
+      <Image
+        src={src}
+        fill
+        className="object-cover rounded-2xl"
+        alt={''}
+      ></Image>
+      <div className=" h-24 z-10 bg-zinc-100 border-zinc-300 dark:bg-neutral-900 w-full left-0 right-0 bottom-0  rounded-lg shadow-xl border dark:border-zinc-800 flex justify-center px-6">
+        <div className="flex flex-col justify-center items-center gap-2">
+          <h1 className="font-regular text-xl">{name}</h1>
+
+          <div className=" h-8 bg-neutral-800 flex justify-between items-center px-4 gap-4 rounded-lg">
+            <div className="flex gap-2">
+              <span className="font-bold">43</span>
+              <p className="font-extralight">Points</p>
+            </div>
+            <div className="flex gap-2">
+              <span className="font-bold">42</span>
+              <p className="font-extralight">Assists</p>
+            </div>
+            <div className="flex gap-2">
+              <span className="font-bold">21</span>
+              <p className="font-extralight">Goals</p>
+            </div>
           </div>
-          <div className="text-left font-semibold text-lg leading-none py-1">
-            {name}
-          </div>
-          <div className="text-left font-light text-foreground/50 text-sm">
-            {points} PTS • {assists} AST
-          </div>
-        </div>
-        <div className="flex justify-center items-center flex-col">
-          <div className="text-4xl font-bold leading-none">{goals}</div>
-          <div className="font-light text-foreground/50 text-base">GOALS</div>
         </div>
       </div>
     </div>
