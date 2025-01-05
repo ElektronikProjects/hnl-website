@@ -4,7 +4,7 @@ import { Separator } from "./ui/separator";
 
 export default function Footer() {
   return (
-    <div className="flex w-full flex-col justify-center items-center bg-[#101517] text-muted-foreground p-6 border-t border-border gap-4">
+    <div className="flex w-full flex-col justify-center items-center dark:bg-[#101517] bg-[#E8EDEF] text-muted-foreground p-6 border-t border-border gap-4">
       <div className="flex w-full justify-between items-center p-4">
         <div className="flex flex-col items-start gap-8">
           <div
@@ -14,10 +14,10 @@ export default function Footer() {
             className="transition-all hover:scale-105 text-5xl font-bold underline underline-offset-8 decoration-accent hover:decoration-primary hover:decoration-4 decoration-2 decoration-offset-2 cursor-pointer"
           >
             <span className="text-primary">Hockey </span>
-            <span className="text-secondary">Nations </span>
+            <span className="text-foreground">Nations </span>
             <span className="text-accent">League</span>
           </div>
-          <div className="text-md font-normal max-w-screen-sm">
+          <div className="text-md font-normal max-w-screen-sm text-foreground/60">
             The best hockey league in the world with the best players and teams.
             The best hockey league in the world with the best players and teams.
             The best hockey league in the world with the best players and teams.
@@ -26,26 +26,26 @@ export default function Footer() {
         <div className="flex flex-col items-start justify-center gap-4">
           <Link
             href={"/"}
-            className="text-3xl hover:scale-110 dark:text-foreground text-background hover:text-primary transition-all cursor-pointer"
+            className="text-3xl hover:scale-110 text-foreground hover:text-primary transition-all cursor-pointer"
           >
             Landing Page
           </Link>
           <div className="flex flex-col items-start gap-2 text-slate-500">
             <Link
               className="text-base hover:underline hover:scale-110 hover:text-accent transition-all cursor-pointer"
-              href={"/"}
+              href={"/players"}
             >
               Players
             </Link>
             <Link
               className="text-base hover:underline hover:scale-110 hover:text-accent transition-all cursor-pointer"
-              href={"/"}
+              href={"/teams"}
             >
               Teams
             </Link>
             <Link
               className="text-base hover:underline hover:scale-110 hover:text-accent transition-all cursor-pointer"
-              href={"/"}
+              href={"/games"}
             >
               Games
             </Link>

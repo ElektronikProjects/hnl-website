@@ -36,10 +36,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex min-h-[calc(100vh-128px)] w-full flex-col justify-start">
+          <div className="relative flex min-h-[calc(100vh-0px)] w-full flex-col justify-start bg-background">
             {children}
-            <Footer />
           </div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
