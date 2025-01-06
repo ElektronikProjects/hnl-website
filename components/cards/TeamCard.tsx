@@ -36,7 +36,7 @@ export default function TeamCard({
           <Image src={`/images/teams/${id}.png`} alt="" fill />
         </div>
         <div className="flex flex-col justify-center gap-1">
-          <div className="text-3xl text-foreground font-semibold font-sans">
+          <div className="text-3xl text-slate-50 font-semibold font-sans">
             {name}
           </div>
           <div className="text-sm font-sans font-semibold text-slate-400">
@@ -48,7 +48,7 @@ export default function TeamCard({
         className={cn(
           "text-4xl font-sans font-semibold",
           nth > 3
-            ? "text-foreground"
+            ? "text-slate-50"
             : nth === 3
             ? "text-[#AB6E32]"
             : nth === 2

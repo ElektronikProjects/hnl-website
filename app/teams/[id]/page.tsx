@@ -22,29 +22,29 @@ export default async function Page({ params }: { params: { id: string } }) {
           <div className="text-7xl font-sans font-bold text-primary w-full flex justify-center items-center">
             {team.name}
           </div>
-          <div className="flex justify-evenly items-center gap-8 font-sans font-bold text-3xl bg-[#1B1A1A] p-6 pl-0 rounded-3xl overflow-visible relative h-32">
-            <div className="flex flex-col gap-2 justify-center items-center h-fit py-6 px-12 bg-[#1B1A1A] rounded-2xl">
+          <div className=" flex justify-evenly items-center gap-8 font-sans font-bold text-3xl dark:bg-[#1B1A1A] bg-slate-100 p-6 pl-0 rounded-3xl overflow-visible relative h-32">
+            <div className="flex flex-col gap-2 justify-center items-center h-fit py-6 px-12 dark:bg-[#1B1A1A] bg-slate-100 rounded-2xl">
               <div className="flex justify-center items-center">
                 <Trophy className="size-20 stroke-amber-300" />
               </div>
-              <div>{team.championships}</div>
+              <div className="text-foreground">{team.championships}</div>
             </div>
             <div className="flex flex-col gap-2 justify-center items-center">
               <div className="text-green-300">Won</div>
-              <div>{team.gamesWon}</div>
+              <div className="text-foreground">{team.gamesWon}</div>
             </div>
             <div className="flex flex-col gap-2 justify-center items-center">
               <div className="text-blue-300">Played</div>
-              <div>{team.gamesPlayed}</div>
+              <div className="text-foreground">{team.gamesPlayed}</div>
             </div>
 
             <div className="flex flex-col gap-2 justify-center items-center">
               <div className="text-red-300">Win%</div>
-              <div>{team.winRatio}</div>
+              <div className="text-foreground">{team.winRatio}</div>
             </div>
             <div className="flex flex-col gap-2 justify-center items-center">
               <div className="text-purple-300">Players</div>
-              <div>{team.players.length}</div>
+              <div className="text-foreground">{team.players.length}</div>
             </div>
           </div>
         </div>

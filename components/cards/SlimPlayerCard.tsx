@@ -1,5 +1,6 @@
 import { cn, getIcon } from "@/lib/utils";
 import { Goal, Handshake, Medal } from "lucide-react";
+import Image from "next/image";
 
 export default function SlimPlayerCard({
   nth,
@@ -7,12 +8,14 @@ export default function SlimPlayerCard({
   goals,
   assists,
   points,
+  src,
 }: {
   nth: number;
   name: string;
   goals: number;
   assists: number;
   points: number;
+  src?: string;
 }) {
   const icons = ["Snowflake", "Sparkles", "Sparkle", "Origami"];
   const bgColors = [
@@ -33,19 +36,34 @@ export default function SlimPlayerCard({
   return (
     <div className="flex justify-between gap-8 items-center p-6 bg-[#1B1A1A] rounded-2xl hover:scale-105 transition-all cursor-pointer opacity-100 hover:opacity-80">
       <div className="flex justify-start items-center gap-2">
-        <div
-          className={cn(
-            "flex justify-center items-center p-4 rounded-full",
-            bgColors[nth % bgColors.length]
-          )}
-        >
-          <Icon
-            className={cn("size-8", strokeColors[nth % strokeColors.length])}
-          />
-        </div>
+        {src ? (
+          <div
+            className={cn(
+              "flex justify-center items-center size-20 rounded-full relative"
+            )}
+          >
+            <Image
+              src={src}
+              fill
+              className="object-cover rounded-full"
+              alt="player"
+            />
+          </div>
+        ) : (
+          <div
+            className={cn(
+              "flex justify-center items-center p-4 rounded-full relative",
+              bgColors[nth % bgColors.length]
+            )}
+          >
+            <Icon
+              className={cn("size-8", strokeColors[nth % strokeColors.length])}
+            />
+          </div>
+        )}
         <div className="flex justify-center items-center gap-4 px-4">
           <div className="flex flex-col justify-center">
-            <div className="flex flex-col items-start justify-center text-foreground text-3xl font-bold font-sans">
+            <div className="flex flex-col items-start justify-center text-slate-50 text-3xl font-bold font-sans">
               {name}
             </div>
             <div className="flex justify-start items-center gap-4 w-fit h-fit">
@@ -66,7 +84,7 @@ export default function SlimPlayerCard({
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-end text-foreground text-4xl font-bold font-sans">
+      <div className="flex flex-col justify-center items-end text-slate-50 text-4xl font-bold font-sans">
         <div className="flex flex-col justify-center items-center text-primary text-sm font-semibold font-sans">
           Nr.
         </div>

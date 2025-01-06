@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
+import { ModeToggle } from "../ui/mode-toggle";
 
 function Hero() {
   return (
@@ -39,10 +41,16 @@ function Hero() {
             </div>
           </div>
         </div>
-        <Button className="font-akira bg-secondary/60 text-white text-xl p-6">
-          See what&apos;s poppin
-        </Button>
-        {/* <ModeToggle /> */}
+        <Link
+          passHref
+          href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran"
+          target="_blank"
+        >
+          <Button className="font-akira bg-secondary/60 text-white text-xl p-6">
+            See what&apos;s poppin
+          </Button>
+        </Link>
+        <ModeToggle />
       </div>
     </div>
   );

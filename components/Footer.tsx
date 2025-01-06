@@ -23,13 +23,19 @@ export default function Footer() {
         </div>
         <ul className="flex gap-8">
           <li>
-            <Link href={"/teams"}>Teams</Link>
+            <Link href={"/teams"} className="text-foreground">
+              Teams
+            </Link>
           </li>
           <li>
-            <Link href={"/games"}>Games</Link>
+            <Link href={"/games"} className="text-foreground">
+              Games
+            </Link>
           </li>
           <li>
-            <Link href={"/players"}>Players</Link>
+            <Link href={"/players"} className="text-foreground">
+              Players
+            </Link>
           </li>
         </ul>
         <div className="w-64 h-24 flex gap-8 items-center">
