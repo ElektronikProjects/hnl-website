@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -5,8 +6,14 @@ function Navbar() {
   return (
     <div className="h-20 bg-background flex justify-between px-8 items-center absolute top-0 w-full z-50">
       <div className="flex items-center  gap-4">
-        {/* logo */}
-        <div className="rounded-full bg-slate-400 h-8 w-8" />
+        <div className="rounded-full relative  size-16">
+          <Image
+            src={"/images/logo.png"}
+            fill
+            alt="logo"
+            className="object-cover"
+          />
+        </div>
         <Link href={"/"} className="font-semibold text-4xl font-akira">
           HNL
         </Link>
