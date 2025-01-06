@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>Games</div>;
+  return <main className="py-24 min-h-screen">Games</main>;
 }

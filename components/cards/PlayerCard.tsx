@@ -27,15 +27,15 @@ export default function PlayerCard({
 
           <div className=" h-8 bg-neutral-800 flex justify-between items-center px-4 gap-4 rounded-lg">
             <div className="flex gap-2">
-              <span className="font-bold">43</span>
+              <span className="font-bold">{points}</span>
               <p className="font-extralight">Points</p>
             </div>
             <div className="flex gap-2">
-              <span className="font-bold">42</span>
+              <span className="font-bold">{assists}</span>
               <p className="font-extralight">Assists</p>
             </div>
             <div className="flex gap-2">
-              <span className="font-bold">21</span>
+              <span className="font-bold">{goals}</span>
               <p className="font-extralight">Goals</p>
             </div>
           </div>
