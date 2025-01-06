@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function PlayerCard({
   name,
@@ -19,7 +19,7 @@ export default function PlayerCard({
         src={src}
         fill
         className="object-cover rounded-2xl"
-        alt={''}
+        alt={""}
       ></Image>
       <div className=" h-24 z-10 bg-zinc-100 border-zinc-300 dark:bg-neutral-900 w-full left-0 right-0 bottom-0  rounded-lg shadow-xl border dark:border-zinc-800 flex justify-center px-6">
         <div className="flex flex-col justify-center items-center gap-2">

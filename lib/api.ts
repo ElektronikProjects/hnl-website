@@ -26,6 +26,34 @@ export const getTeams = async (from: number, to: number) => {
   return data;
 };
 
+export const getTeamWithPlayers = async (id: number) => {
+  const { data: teams, error: error1 } = await supabase
+    .from("teams")
+    .select("*")
+    .eq("id", id)
+    .limit(1);
+
+  const { data: players, error: error2 } = await supabase
+    .from("players")
+    .select(
+      `
+      *,
+    teams (
+      id
+    )
+  `
+    )
+    .eq("team_id", id);
+
+  if (error1 || error2) console.error(error1, error2);
+  else {
+    teams.forEach((team) => {
+      team.players = players.filter((player) => player.team_id === team.id);
+    });
+    return teams[0];
+  }
+};
+
 export const getGames = async (from: number, to: number) => {
   const { data, error } = await supabase
     .from("games")

@@ -7,7 +7,7 @@ import Players from '@/components/landingPage/Players';
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center gap-16 ">
+    <main className="flex flex-col justify-center gap-16">
       <Hero />
       <Banner />
       <Players />
