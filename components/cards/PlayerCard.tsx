@@ -14,7 +14,7 @@ export default function PlayerCard({
   points: number;
 }) {
   return (
-    <div className="h-[32rem] w-full bg-slate-900 rounded-2xl relative flex flex-col justify-end items-center p-2">
+    <div className="h-[32rem] w-full bg-slate-900 rounded-2xl relative flex flex-col justify-end items-center p-2 shadow-2xl border border-zinc-300 dark:border-neutral-800 ">
       <Image
         src={src}
         fill

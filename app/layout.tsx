@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  ${akira.variable} ${nunito.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable}  ${akira.variable} ${nunito.className} antialiased overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
@@ -48,9 +48,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <div className="relative flex min-h-[calc(100vh-0px)] w-full flex-col justify-start bg-background">
-            {children}
-          </div>
+          {children}
+
           <Footer />
         </ThemeProvider>
       </body>
