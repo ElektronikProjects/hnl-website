@@ -6,7 +6,7 @@ import PlayerCard from "../cards/PlayerCard";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 
 export default function Players({ players }: { players: any }) {
-  console.log(players);
+  console.log(players.length);
 
   return (
     <div className="flex  flex-col items-center justify-center gap-12 px-8 w-full h-screen relative">
@@ -37,7 +37,7 @@ export default function Players({ players }: { players: any }) {
             <CarouselItem key={i} className="basis-1/3  !w-80">
               <PlayerCard
                 name={player.name}
-                src="/images/murzyn.webp"
+                src={`/players/${i + 1}.jpg`}
                 goals={player.goals}
                 assists={player.assists}
                 points={player.points}
