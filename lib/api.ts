@@ -58,7 +58,7 @@ export const getGames = async (from: number, to: number) => {
   const { data, error } = await supabase
     .from("games")
     .select("*")
-    .order("create_at", { ascending: false })
+    .order("date", { ascending: false })
     .range(from, to);
   if (error) throw error;
   return data;
