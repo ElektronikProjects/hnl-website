@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { Button } from "../ui/button";
-import Link from "next/link";
-import { ModeToggle } from "../ui/mode-toggle";
+import Image from "next/image"
+import { Button } from "../ui/button"
+import Link from "next/link"
+import { ModeToggle } from "../ui/mode-toggle"
 
 function Hero() {
   return (
@@ -50,10 +50,10 @@ function Hero() {
             See what&apos;s poppin
           </Button>
         </Link>
-        <ModeToggle />
+        {/* <ModeToggle /> */}
       </div>
     </div>
-  );
+  )
 }
 
-export default Hero;
+export default Hero
