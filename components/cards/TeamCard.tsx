@@ -36,10 +36,10 @@ export default function TeamCard({
           <Image src={`/images/teams/${id}.png`} alt="" fill />
         </div>
         <div className="flex flex-col justify-center gap-1">
-          <div className="text-2xl text-foreground font-semibold font-sans">
+          <div className="text-3xl text-foreground font-semibold font-sans">
             {name}
           </div>
-          <div className="text-sm font-sans font-light text-slate-400">
+          <div className="text-sm font-sans font-semibold text-slate-400">
             {won} WON • {played} PLD • {championships} CHM
           </div>
         </div>
