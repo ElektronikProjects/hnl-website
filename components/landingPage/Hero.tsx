@@ -1,20 +1,18 @@
-import React from 'react';
-import { Button } from '../ui/button';
-import { ModeToggle } from '../ui/mode-toggle';
-import Image from 'next/image';
+import Image from "next/image";
+import { Button } from "../ui/button";
 
 function Hero() {
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center gap-4 bg-gradient-to-b from-neutral-900 via-transparent ">
       <div className="w-full h-screen absolute z-20 bg-gradient-to-b from-transparent from-80% to-background to-100%" />
       <Image
-        src={'/landingpagebg.svg'}
+        src={"/landingpagebg.svg"}
         fill
         alt="image"
         className="object-cover z-10 "
       />
       <Image
-        src={'/lines.svg'}
+        src={"/lines.svg"}
         fill
         alt="lines"
         className="object-cover z-10 "
@@ -24,7 +22,7 @@ function Hero() {
         <div>
           <div className="w-full flex justify-end">
             <Image
-              src={'/star.svg'}
+              src={"/star.svg"}
               width={128}
               height={128}
               alt="lines"
