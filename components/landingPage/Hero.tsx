@@ -40,15 +40,10 @@ function Hero() {
             </div>
           </div>
         </div>
-        <Link
-          passHref
-          href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran"
-          target="_blank"
-        >
-          <Button className="font-akira bg-secondary/60 text-white text-xl p-6">
-            See what&apos;s poppin
-          </Button>
-        </Link>
+
+        <Button className="font-akira bg-secondary/60 text-white text-xl p-6">
+          See what&apos;s poppin
+        </Button>
         {/* <ModeToggle /> */}
       </div>
     </div>
