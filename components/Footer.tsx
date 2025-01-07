@@ -1,8 +1,8 @@
-"use client";
-import Link from "next/link";
-import { Separator } from "./ui/separator";
-import { Facebook, Instagram, Twitch } from "lucide-react";
-import Image from "next/image";
+"use client"
+import Link from "next/link"
+import { Separator } from "./ui/separator"
+import { Facebook, Instagram, Twitch } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -39,9 +39,18 @@ export default function Footer() {
           </li>
         </ul>
         <div className="w-64 h-24 flex gap-8 items-center">
-          <Facebook />
-          <Instagram />
-          <Twitch />
+          <Link href={"https://www.facebook.com/NHL"} target="_blank">
+            <Facebook className="stroke-foreground hover:stroke-primary" />
+          </Link>
+          <Link href={"https://www.instagram.com/nhl"} target="_blank">
+            <Instagram className="stroke-foreground hover:stroke-primary" />
+          </Link>
+          <Link
+            href={"https://www.twitch.tv/directory/category/nhl-25"}
+            target="_blank"
+          >
+            <Twitch className="stroke-foreground hover:stroke-primary" />
+          </Link>
         </div>
       </div>
 
@@ -56,5 +65,5 @@ export default function Footer() {
         </div>
       </div>
     </div>
-  );
+  )
 }
