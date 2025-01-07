@@ -1,9 +1,8 @@
-import { cn } from "@/lib/utils"
-import Image from "next/image"
-import Link from "next/link"
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function GameCard({
-  id,
   href,
   date,
   team_home,
@@ -11,26 +10,27 @@ export default function GameCard({
   home_points,
   away_points,
 }: {
-  id: number
-  href: string
-  date: string
-  team_home: number
-  team_away: number
-  home_points: number
-  away_points: number
+  id: number;
+  href: string;
+  date: string;
+  team_home: number;
+  team_away: number;
+  home_points: number;
+  away_points: number;
 }) {
-  const dateObj = new Date(date)
-  const year = dateObj.getFullYear()
-  const day = dateObj.getDate()
-  const month = dateObj.toLocaleString("en-US", { month: "long" })
-  const areny = ["Moskov", "Prague", "Ostrava", "Bratislava"]
-  const arena = areny[team_home % areny.length]
+  const dateObj = new Date(date);
+  const year = dateObj.getFullYear();
+  const day = dateObj.getDate();
+  const month = dateObj.toLocaleString("en-US", { month: "long" });
+  const areny = ["Moskov", "Prague", "Ostrava", "Bratislava"];
+  const arena = areny[team_home % areny.length];
   return (
     <Link
       href={href}
       className={cn(
         "rounded-lg hover:opacity-75 opacity-100 transition-opacity"
-      )}>
+      )}
+    >
       <div className="flex flex-col items-center justify-center w-full bg-[#1F293790] rounded-lg py-7 px-10">
         <div className="flex items-center justify-between w-full gap-72">
           <div className="text-2xl font-semibold text-[#9CA3AF]">
@@ -54,5 +54,5 @@ export default function GameCard({
         </div>
       </div>
     </Link>
-  )
+  );
 }

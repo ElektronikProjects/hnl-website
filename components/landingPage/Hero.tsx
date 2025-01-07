@@ -1,7 +1,6 @@
-import Image from "next/image"
-import { Button } from "../ui/button"
-import Link from "next/link"
-import { ModeToggle } from "../ui/mode-toggle"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
 function Hero() {
   return (
@@ -13,13 +12,13 @@ function Hero() {
         alt="image"
         className="object-cover z-10 "
       />
+      O
       <Image
         src={"/lines.svg"}
         fill
         alt="lines"
         className="object-cover z-10 "
       />
-
       <div className="flex flex-col items-center justify-center z-20 gap-8  relative">
         <div>
           <div className="w-full flex justify-end">
@@ -53,7 +52,7 @@ function Hero() {
         {/* <ModeToggle /> */}
       </div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
